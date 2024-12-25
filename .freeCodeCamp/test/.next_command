@@ -189,3 +189,4 @@ psql --username=freecodecamp --dbname=postgres
 ./queries.sh
 ./queries.sh
 ./queries.sh
+git add .
