@@ -1,0 +1,191 @@
+builtin unset VSCODE_INJECTION
+[ -z "$VSCODE_SHELL_INTEGRATION" ]
+[ -n "${VSCODE_ENV_REPLACE:-}" ]
+[ -n "${VSCODE_ENV_PREPEND:-}" ]
+[ -n "${VSCODE_ENV_APPEND:-}" ]
+__vsc_regex_environment="^CYGWIN*|MINGW*|MSYS*"
+[[ "$(uname -s)" =~ $__vsc_regex_environment ]]
+__vsc_is_windows=0
+__vsc_regex_histcontrol=".*(erasedups|ignoreboth|ignoredups).*"
+[[ "$HISTCONTROL" =~ $__vsc_regex_histcontrol ]]
+__vsc_history_verify=1
+builtin unset __vsc_regex_environment
+builtin unset __vsc_regex_histcontrol
+__vsc_initialized=0
+__vsc_original_PS1="$PS1"
+__vsc_original_PS2="$PS2"
+__vsc_custom_PS1=""
+__vsc_custom_PS2=""
+__vsc_in_command_execution="1"
+__vsc_current_command=""
+__vsc_nonce="$VSCODE_NONCE"
+unset VSCODE_NONCE
+__vsc_stable="$VSCODE_STABLE"
+unset VSCODE_STABLE
+[ "$__vsc_stable" = "0" ]
+[[ -n "${bash_preexec_imported:-}" ]]
+__vsc_dbg_trap="$(__vsc_get_trap DEBUG)"
+[[ -z "$__vsc_dbg_trap" ]]
+[[ "$__vsc_dbg_trap" != '__vsc_preexec "$_"' && "$__vsc_dbg_trap" != '__vsc_preexec_all "$_"' ]]
+trap '__vsc_preexec_all "$_"' DEBUG
+__vsc_original_prompt_command=${PROMPT_COMMAND:-}
+builtin unset VSCODE_INJECTION
+[ -z "$VSCODE_SHELL_INTEGRATION" ]
+[ -n "${VSCODE_ENV_REPLACE:-}" ]
+[ -n "${VSCODE_ENV_PREPEND:-}" ]
+[ -n "${VSCODE_ENV_APPEND:-}" ]
+__vsc_regex_environment="^CYGWIN*|MINGW*|MSYS*"
+[[ "$(uname -s)" =~ $__vsc_regex_environment ]]
+__vsc_is_windows=0
+__vsc_regex_histcontrol=".*(erasedups|ignoreboth|ignoredups).*"
+[[ "$HISTCONTROL" =~ $__vsc_regex_histcontrol ]]
+__vsc_history_verify=1
+builtin unset __vsc_regex_environment
+builtin unset __vsc_regex_histcontrol
+__vsc_initialized=0
+__vsc_original_PS1="$PS1"
+__vsc_original_PS2="$PS2"
+__vsc_custom_PS1=""
+__vsc_custom_PS2=""
+__vsc_in_command_execution="1"
+__vsc_current_command=""
+__vsc_nonce="$VSCODE_NONCE"
+unset VSCODE_NONCE
+__vsc_stable="$VSCODE_STABLE"
+unset VSCODE_STABLE
+[ "$__vsc_stable" = "0" ]
+[[ -n "${bash_preexec_imported:-}" ]]
+__vsc_dbg_trap="$(__vsc_get_trap DEBUG)"
+[[ -z "$__vsc_dbg_trap" ]]
+[[ "$__vsc_dbg_trap" != '__vsc_preexec "$_"' && "$__vsc_dbg_trap" != '__vsc_preexec_all "$_"' ]]
+trap '__vsc_preexec_all "$_"' DEBUG
+__vsc_original_prompt_command=${PROMPT_COMMAND:-}
+psql --username=freecodecamp --dbname=postgres
+chmod +x insert_games.sh
+chmod +x insert_games.sh
+chmod +x insert_data.sh
+chmod +x queries.sh
+./insert_data.sh
+./insert_data.sh
+psql --username=freecodecamp --dbname=postgres
+./insert_data.sh
+\c worldcup
+psql --username=freecodecamp --dbname=postgres
+pg_dump -cC --inserts -U freecodecamp worldcup > worldcup.sql
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+PSQL="psql --username=freecodecamp --dbname=worldcup --no-align --tuples-only -c"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo -e "\nTotal number of goals in all games from winning teams:"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo "$($PSQL "SELECT SUM(winner_goals) FROM games")"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo -e "\nTotal number of goals in all games from both teams combined:"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo "$($PSQL "SELECT SUM(winner_goals + opponent_goals) FROM games")"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo -e "\nAverage number of goals in all games from the winning teams:"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo "$($PSQL "SELECT AVG(winner_goals) FROM games")"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo -e "\nAverage number of goals in all games from the winning teams rounded to two decimal places:"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo "$($PSQL "SELECT ROUND(AVG(winner_goals), 2) FROM games")"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo -e "\nAverage number of goals in all games from both teams:"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo "$($PSQL "SELECT AVG(winner_goals + opponent_goals) FROM games")"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo -e "\nMost goals scored in a single game by one team:"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo "$($PSQL "SELECT MAX(winner_goals) FROM games")"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo -e "\nNumber of games where the winning team scored more than two goals:"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo echo "$($PSQL "SELECT COUNT(*) FROM games WHERE winner_goals > 2")"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo -e "\nWinner of the 2018 tournament team name:"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo "$($PSQL "SELECT t.name FROM games g JOIN teams t ON g.winner_id = t.team_id WHERE g.year = 2018 AND g.round = 'Final'")"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo -e "\nList of teams who played in the 2014 'Eighth-Final' round:"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo "$($PSQL "SELECT DISTINCT t.name FROM games g JOIN t ON g.winner_id = t.team_id OR g.opponent_id = t.team_id WHERE g.year = 2014 AND g.round = 'Eight-Final'")"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo -e "\nList of unique winning team names in the whole data set:"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo "$($PSQL "SELECT DISTINCT t.name FROM games g JOIN teams t ON g.winner_id = t.team_id")"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo -e "\nYear and team name of all the champions:"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo "$($PSQL "SELECT g.year, g.name FROM games g JOIN teams t ON g.winner_id = t.team_id WHERE round = 'Final'")"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo -e "\nList of teams that start with 'Co':"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo "$($PSQL "SELECT name FROM teams WHERE name LIKE 'Co%'")"
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+echo $PWD >> /workspace/project/.freeCodeCamp/test/.cwd
+history -a
+psql --username=freecodecamp --dbname=postgres
+./queries.sh
+./queries.sh
+./insert_data.sh
+./insert_data.sh
+./queries.sh
+./queries.sh
+./queries.sh
