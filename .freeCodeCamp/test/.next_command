@@ -190,3 +190,6 @@ psql --username=freecodecamp --dbname=postgres
 ./queries.sh
 ./queries.sh
 git add .
+git commit
+git push https://github.com/coochill/worldcup-db-project.git
+git push -u origin main
